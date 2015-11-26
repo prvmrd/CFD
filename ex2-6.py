@@ -8,6 +8,7 @@ delx = float(raw_input("Enter DeltaX: "))
 def f(float):
 	return 1/4*float**2
 
+#Function for Analytic solution
 def anasol(x):
 	#Analytic solution
 	X = Symbol('x')
@@ -18,7 +19,7 @@ def anasol(x):
 	AnalyticSol = c[0] * x
 	return AnalyticSol
 
-
+#Function for Forward Diffrence Method
 def fd(x, delx):
 	print "Forward Diffrence Method"
 	n = (f(x+delx)-f(x))/delx
@@ -27,14 +28,16 @@ def fd(x, delx):
 	print "Error Percentage is: %.2f\n" % error
 	return 
 
+#Function for Backward Diffrence Method
 def bd(x, delx):
-	print "Forward Diffrence Method"
+	print "Backward Diffrence Method"
 	n = (f(x)-f(x-delx))/delx
 	error = abs(((n-anasol(x))/anasol(x)) * 100)
 	print "RondF/RondX: %.3f" % n
 	print "Error Percentage is: %.2f\n" % error
 	return
 
+#Function for Centeral Diffrence Method
 def cd(x, delx):
 	print "Centeral Diffrence Method"
 	n = (f(x+delx)-f(x-delx))/(2*delx)
@@ -43,6 +46,7 @@ def cd(x, delx):
 	print "Error Percentage is: %.2f\n" % error
 	return
 
+#Run function
 def run():
 	print "1: Forward difference"
 	print "2: Backward difference"
