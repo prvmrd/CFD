@@ -32,7 +32,7 @@ def bd(x, delx):
 	n = (f(x)-f(x-delx))/delx
 	error = abs(((n-anasol(x))/anasol(x)) * 100)
 	print "RondF/RondX: %.3f" % n
-	print "Error 0.00Percentage is: %.2f\n" % error
+	print "Error Percentage is: %.2f\n" % error
 	return
 
 def cd(x, delx):
